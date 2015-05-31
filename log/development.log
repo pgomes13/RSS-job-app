@@ -1,0 +1,904 @@
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (10.0ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (8.0ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.0ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Migrating to CreateJobs (20130708153836)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "jobs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "source" varchar(255), "url" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130708153836')[0m
+  [1m[35m (7.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2013-07-09 01:10:18 +0930
+Served asset /rails.png - 304 Not Modified (18ms)
+
+
+Started GET "/jobs" for 127.0.0.1 at 2013-07-09 01:10:32 +0930
+Processing by JobsController#index as HTML
+  [1m[36mJob Load (0.0ms)[0m  [1mSELECT "jobs".* FROM "jobs" [0m
+  Rendered jobs/index.html.erb within layouts/application (8.0ms)
+Compiled jobs.css  (23ms)  (pid 9108)
+Compiled scaffolds.css  (11ms)  (pid 9108)
+Compiled application.css  (68ms)  (pid 9108)
+Compiled jquery.js  (3ms)  (pid 9108)
+Compiled jquery_ujs.js  (2ms)  (pid 9108)
+Compiled jobs.js  (461ms)  (pid 9108)
+Compiled application.js  (1035ms)  (pid 9108)
+Completed 200 OK in 1492ms (Views: 1436.1ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/assets/jobs.css?body=1" for 127.0.0.1 at 2013-07-09 01:10:34 +0930
+Served asset /jobs.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-07-09 01:10:34 +0930
+Served asset /scaffolds.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-09 01:10:34 +0930
+Served asset /jquery.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-07-09 01:10:34 +0930
+Served asset /application.css - 304 Not Modified (12ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-09 01:10:34 +0930
+Served asset /jquery_ujs.js - 200 OK (7ms)
+
+
+Started GET "/assets/jobs.js?body=1" for 127.0.0.1 at 2013-07-09 01:10:34 +0930
+Served asset /jobs.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-07-09 01:10:34 +0930
+Served asset /application.js - 304 Not Modified (14ms)
+
+
+Started GET "/jobs/new" for 127.0.0.1 at 2013-07-09 01:10:36 +0930
+Processing by JobsController#new as HTML
+  Rendered jobs/_form.html.erb (22.0ms)
+  Rendered jobs/new.html.erb within layouts/application (40.0ms)
+Completed 200 OK in 59ms (Views: 50.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-07-09 01:10:36 +0930
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jobs.css?body=1" for 127.0.0.1 at 2013-07-09 01:10:36 +0930
+Served asset /jobs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-09 01:10:36 +0930
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-07-09 01:10:36 +0930
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jobs.js?body=1" for 127.0.0.1 at 2013-07-09 01:10:36 +0930
+Served asset /jobs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-07-09 01:10:36 +0930
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started POST "/jobs" for 127.0.0.1 at 2013-07-09 01:11:45 +0930
+Processing by JobsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PlpNgoep+t/Y58AjPVvxpc2LlGTH+eCF7cWCqUGuemo=", "job"=>{"source"=>"accounting", "url"=>"http://www.careerbuilder.com/RTQ/rss20.aspx?rssid=RSS_PD&num=25&geoip=false&ddcompany=false&ddtitle=false&cat=JN001"}, "commit"=>"Create Job"}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (22.0ms)[0m  [1mINSERT INTO "jobs" ("created_at", "source", "updated_at", "url") VALUES (?, ?, ?, ?)[0m  [["created_at", Mon, 08 Jul 2013 15:41:45 UTC +00:00], ["source", "accounting"], ["updated_at", Mon, 08 Jul 2013 15:41:45 UTC +00:00], ["url", "http://www.careerbuilder.com/RTQ/rss20.aspx?rssid=RSS_PD&num=25&geoip=false&ddcompany=false&ddtitle=false&cat=JN001"]]
+  [1m[35m (8.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/jobs/1
+Completed 302 Found in 36ms (ActiveRecord: 30.0ms)
+
+
+Started GET "/jobs/1" for 127.0.0.1 at 2013-07-09 01:11:45 +0930
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.0ms)[0m  [1mSELECT "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered jobs/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 10ms (Views: 8.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-07-09 01:11:45 +0930
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jobs.css?body=1" for 127.0.0.1 at 2013-07-09 01:11:45 +0930
+Served asset /jobs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-07-09 01:11:45 +0930
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-09 01:11:45 +0930
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jobs.js?body=1" for 127.0.0.1 at 2013-07-09 01:11:45 +0930
+Served asset /jobs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-07-09 01:11:45 +0930
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/jobs/1/edit" for 127.0.0.1 at 2013-07-09 01:11:59 +0930
+Processing by JobsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mJob Load (1.0ms)[0m  SELECT "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered jobs/_form.html.erb (3.0ms)
+  Rendered jobs/edit.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 27ms (Views: 22.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-07-09 01:11:59 +0930
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jobs.css?body=1" for 127.0.0.1 at 2013-07-09 01:12:00 +0930
+Served asset /jobs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-09 01:12:00 +0930
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-07-09 01:12:00 +0930
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jobs.js?body=1" for 127.0.0.1 at 2013-07-09 01:12:00 +0930
+Served asset /jobs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-07-09 01:12:00 +0930
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started PUT "/jobs/1" for 127.0.0.1 at 2013-07-09 01:12:04 +0930
+Processing by JobsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PlpNgoep+t/Y58AjPVvxpc2LlGTH+eCF7cWCqUGuemo=", "job"=>{"source"=>"accounting1", "url"=>"http://www.careerbuilder.com/RTQ/rss20.aspx?rssid=RSS_PD&num=25&geoip=false&ddcompany=false&ddtitle=false&cat=JN001"}, "commit"=>"Update Job", "id"=>"1"}
+  [1m[36mJob Load (1.0ms)[0m  [1mSELECT "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (1.0ms)[0m  [1mUPDATE "jobs" SET "source" = 'accounting1', "updated_at" = '2013-07-08 15:42:04.487790' WHERE "jobs"."id" = 1[0m
+  [1m[35m (7.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/jobs/1
+Completed 302 Found in 11ms (ActiveRecord: 9.0ms)
+
+
+Started GET "/jobs/1" for 127.0.0.1 at 2013-07-09 01:12:04 +0930
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.0ms)[0m  [1mSELECT "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered jobs/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-07-09 01:12:04 +0930
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-07-09 01:12:04 +0930
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jobs.js?body=1" for 127.0.0.1 at 2013-07-09 01:12:04 +0930
+Served asset /jobs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-09 01:12:04 +0930
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-07-09 01:12:04 +0930
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jobs.css?body=1" for 127.0.0.1 at 2013-07-09 01:12:04 +0930
+Served asset /jobs.css - 304 Not Modified (0ms)
+
+
+Started GET "/jobs/1/edit" for 127.0.0.1 at 2013-07-09 01:12:07 +0930
+Processing by JobsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mJob Load (0.0ms)[0m  SELECT "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered jobs/_form.html.erb (3.0ms)
+  Rendered jobs/edit.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 20ms (Views: 18.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-07-09 01:12:07 +0930
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-07-09 01:12:07 +0930
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-09 01:12:07 +0930
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jobs.css?body=1" for 127.0.0.1 at 2013-07-09 01:12:07 +0930
+Served asset /jobs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jobs.js?body=1" for 127.0.0.1 at 2013-07-09 01:12:07 +0930
+Served asset /jobs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-07-09 01:12:07 +0930
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/jobs/1" for 127.0.0.1 at 2013-07-09 01:12:09 +0930
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.0ms)[0m  [1mSELECT "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered jobs/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 25ms (Views: 23.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-07-09 01:12:09 +0930
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jobs.css?body=1" for 127.0.0.1 at 2013-07-09 01:12:09 +0930
+Served asset /jobs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-07-09 01:12:09 +0930
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jobs.js?body=1" for 127.0.0.1 at 2013-07-09 01:12:09 +0930
+Served asset /jobs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-07-09 01:12:09 +0930
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-09 01:12:09 +0930
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/jobs/1/edit" for 127.0.0.1 at 2013-07-09 01:12:13 +0930
+Processing by JobsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mJob Load (0.0ms)[0m  SELECT "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered jobs/_form.html.erb (3.0ms)
+  Rendered jobs/edit.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 21ms (Views: 20.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-07-09 01:12:13 +0930
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jobs.css?body=1" for 127.0.0.1 at 2013-07-09 01:12:13 +0930
+Served asset /jobs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-09 01:12:13 +0930
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jobs.js?body=1" for 127.0.0.1 at 2013-07-09 01:12:13 +0930
+Served asset /jobs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-07-09 01:12:13 +0930
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-07-09 01:12:13 +0930
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started PUT "/jobs/1" for 127.0.0.1 at 2013-07-09 01:12:18 +0930
+Processing by JobsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PlpNgoep+t/Y58AjPVvxpc2LlGTH+eCF7cWCqUGuemo=", "job"=>{"source"=>"accounting", "url"=>"http://www.careerbuilder.com/RTQ/rss20.aspx?rssid=RSS_PD&num=25&geoip=false&ddcompany=false&ddtitle=false&cat=JN001"}, "commit"=>"Update Job", "id"=>"1"}
+  [1m[36mJob Load (0.0ms)[0m  [1mSELECT "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (1.0ms)[0m  [1mUPDATE "jobs" SET "source" = 'accounting', "updated_at" = '2013-07-08 15:42:18.676601' WHERE "jobs"."id" = 1[0m
+  [1m[35m (7.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/jobs/1
+Completed 302 Found in 12ms (ActiveRecord: 8.0ms)
+
+
+Started GET "/jobs/1" for 127.0.0.1 at 2013-07-09 01:12:18 +0930
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.0ms)[0m  [1mSELECT "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered jobs/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 13ms (Views: 12.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-07-09 01:12:18 +0930
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jobs.css?body=1" for 127.0.0.1 at 2013-07-09 01:12:18 +0930
+Served asset /jobs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-07-09 01:12:18 +0930
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-09 01:12:18 +0930
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jobs.js?body=1" for 127.0.0.1 at 2013-07-09 01:12:18 +0930
+Served asset /jobs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-07-09 01:12:18 +0930
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/jobs" for 127.0.0.1 at 2013-07-09 01:12:20 +0930
+Processing by JobsController#index as HTML
+  [1m[35mJob Load (1.0ms)[0m  SELECT "jobs".* FROM "jobs" 
+  Rendered jobs/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 18ms (Views: 16.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-07-09 01:12:20 +0930
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-07-09 01:12:20 +0930
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jobs.css?body=1" for 127.0.0.1 at 2013-07-09 01:12:20 +0930
+Served asset /jobs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jobs.js?body=1" for 127.0.0.1 at 2013-07-09 01:12:20 +0930
+Served asset /jobs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-09 01:12:20 +0930
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-07-09 01:12:20 +0930
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/jobs/new" for 127.0.0.1 at 2013-07-09 01:13:41 +0930
+Processing by JobsController#new as HTML
+  Rendered jobs/_form.html.erb (3.0ms)
+  Rendered jobs/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 36ms (Views: 36.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-07-09 01:13:41 +0930
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jobs.css?body=1" for 127.0.0.1 at 2013-07-09 01:13:41 +0930
+Served asset /jobs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-07-09 01:13:41 +0930
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-09 01:13:41 +0930
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jobs.js?body=1" for 127.0.0.1 at 2013-07-09 01:13:41 +0930
+Served asset /jobs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-07-09 01:13:42 +0930
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/jobs" for 127.0.0.1 at 2013-07-09 01:14:19 +0930
+Processing by JobsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PlpNgoep+t/Y58AjPVvxpc2LlGTH+eCF7cWCqUGuemo=", "job"=>{"source"=>"medicine", "url"=>"http://www.careerbuilder.com/RTQ/rss20.aspx?rssid=RSS_PD&num=25&geoip=false&ddcompany=false&ddtitle=false&cat=JN038"}, "commit"=>"Create Job"}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  INSERT INTO "jobs" ("created_at", "source", "updated_at", "url") VALUES (?, ?, ?, ?)  [["created_at", Mon, 08 Jul 2013 15:44:19 UTC +00:00], ["source", "medicine"], ["updated_at", Mon, 08 Jul 2013 15:44:19 UTC +00:00], ["url", "http://www.careerbuilder.com/RTQ/rss20.aspx?rssid=RSS_PD&num=25&geoip=false&ddcompany=false&ddtitle=false&cat=JN038"]]
+  [1m[36m (7.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/jobs/2
+Completed 302 Found in 11ms (ActiveRecord: 9.0ms)
+
+
+Started GET "/jobs/2" for 127.0.0.1 at 2013-07-09 01:14:19 +0930
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mJob Load (0.0ms)[0m  SELECT "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT 1  [["id", "2"]]
+  Rendered jobs/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-07-09 01:14:19 +0930
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jobs.css?body=1" for 127.0.0.1 at 2013-07-09 01:14:19 +0930
+Served asset /jobs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-07-09 01:14:19 +0930
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-09 01:14:19 +0930
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jobs.js?body=1" for 127.0.0.1 at 2013-07-09 01:14:19 +0930
+Served asset /jobs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-07-09 01:14:19 +0930
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/jobs" for 127.0.0.1 at 2013-07-09 01:14:24 +0930
+Processing by JobsController#index as HTML
+  [1m[36mJob Load (1.0ms)[0m  [1mSELECT "jobs".* FROM "jobs" [0m
+  Rendered jobs/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 17ms (Views: 16.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-07-09 01:14:24 +0930
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-07-09 01:14:24 +0930
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jobs.css?body=1" for 127.0.0.1 at 2013-07-09 01:14:24 +0930
+Served asset /jobs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-09 01:14:24 +0930
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jobs.js?body=1" for 127.0.0.1 at 2013-07-09 01:14:24 +0930
+Served asset /jobs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-07-09 01:14:24 +0930
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/jobs/1" for 127.0.0.1 at 2013-07-09 01:14:33 +0930
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mJob Load (0.0ms)[0m  SELECT "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered jobs/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 12ms (Views: 10.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-07-09 01:14:33 +0930
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jobs.css?body=1" for 127.0.0.1 at 2013-07-09 01:14:33 +0930
+Served asset /jobs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-07-09 01:14:33 +0930
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-09 01:14:33 +0930
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jobs.js?body=1" for 127.0.0.1 at 2013-07-09 01:14:33 +0930
+Served asset /jobs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-07-09 01:14:33 +0930
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/jobs" for 127.0.0.1 at 2013-07-09 01:14:36 +0930
+Processing by JobsController#index as HTML
+  [1m[36mJob Load (1.0ms)[0m  [1mSELECT "jobs".* FROM "jobs" [0m
+  Rendered jobs/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 24ms (Views: 21.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-07-09 01:14:36 +0930
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jobs.css?body=1" for 127.0.0.1 at 2013-07-09 01:14:36 +0930
+Served asset /jobs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-07-09 01:14:36 +0930
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-09 01:14:36 +0930
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jobs.js?body=1" for 127.0.0.1 at 2013-07-09 01:14:36 +0930
+Served asset /jobs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-07-09 01:14:36 +0930
+Served asset /application.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/main/welcome" for 127.0.0.1 at 2013-07-09 01:18:52 +0930
+Processing by MainController#welcome as HTML
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "jobs" 
+  Rendered main/welcome.html.erb within layouts/application (0.0ms)
+Compiled main.css  (5ms)  (pid 9108)
+Compiled application.css  (36ms)  (pid 9108)
+Compiled main.js  (182ms)  (pid 9108)
+Compiled application.js  (203ms)  (pid 9108)
+Completed 200 OK in 612ms (Views: 608.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-07-09 01:18:53 +0930
+Served asset /application.css - 304 Not Modified (26ms)
+
+
+Started GET "/assets/jobs.css?body=1" for 127.0.0.1 at 2013-07-09 01:18:53 +0930
+Served asset /jobs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-07-09 01:18:53 +0930
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2013-07-09 01:18:53 +0930
+Served asset /main.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-09 01:18:53 +0930
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jobs.js?body=1" for 127.0.0.1 at 2013-07-09 01:18:53 +0930
+Served asset /jobs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.js?body=1" for 127.0.0.1 at 2013-07-09 01:18:53 +0930
+Served asset /main.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-07-09 01:18:53 +0930
+Served asset /application.js - 304 Not Modified (25ms)
+
+
+Started GET "/jobs" for 127.0.0.1 at 2013-07-09 01:20:12 +0930
+Processing by JobsController#index as HTML
+  [1m[36mJob Load (1.0ms)[0m  [1mSELECT "jobs".* FROM "jobs" [0m
+  Rendered jobs/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 20ms (Views: 15.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-09 01:20:12 +0930
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-09 01:20:12 +0930
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2013-07-09 01:20:12 +0930
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jobs.css?body=1" for 127.0.0.1 at 2013-07-09 01:20:12 +0930
+Served asset /jobs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-07-09 01:20:12 +0930
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-07-09 01:20:12 +0930
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jobs.js?body=1" for 127.0.0.1 at 2013-07-09 01:20:12 +0930
+Served asset /jobs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.js?body=1" for 127.0.0.1 at 2013-07-09 01:20:12 +0930
+Served asset /main.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-07-09 01:20:12 +0930
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/jobs" for 127.0.0.1 at 2013-07-09 01:27:48 +0930
+Processing by JobsController#index as HTML
+  [1m[35mJob Load (0.0ms)[0m  SELECT "jobs".* FROM "jobs" 
+  Rendered jobs/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 23ms (Views: 21.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-07-09 01:27:48 +0930
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-09 01:27:48 +0930
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jobs.css?body=1" for 127.0.0.1 at 2013-07-09 01:27:48 +0930
+Served asset /jobs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-07-09 01:27:48 +0930
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2013-07-09 01:27:48 +0930
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-09 01:27:48 +0930
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jobs.js?body=1" for 127.0.0.1 at 2013-07-09 01:27:48 +0930
+Served asset /jobs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/main.js?body=1" for 127.0.0.1 at 2013-07-09 01:27:48 +0930
+Served asset /main.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-07-09 01:27:49 +0930
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/jobs" for 127.0.0.1 at 2013-07-09 01:28:28 +0930
+Processing by JobsController#index as HTML
+  [1m[36mJob Load (0.0ms)[0m  [1mSELECT "jobs".* FROM "jobs" [0m
+  Rendered jobs/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 20ms (Views: 19.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-07-09 01:28:28 +0930
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-09 01:28:28 +0930
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2013-07-09 01:28:28 +0930
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jobs.css?body=1" for 127.0.0.1 at 2013-07-09 01:28:28 +0930
+Served asset /jobs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-07-09 01:28:28 +0930
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-09 01:28:28 +0930
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jobs.js?body=1" for 127.0.0.1 at 2013-07-09 01:28:28 +0930
+Served asset /jobs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.js?body=1" for 127.0.0.1 at 2013-07-09 01:28:28 +0930
+Served asset /main.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-07-09 01:28:28 +0930
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/jobs/new" for 127.0.0.1 at 2013-07-09 02:05:54 +0930
+Processing by JobsController#new as HTML
+  Rendered jobs/_form.html.erb (3.0ms)
+  Rendered jobs/new.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 31ms (Views: 30.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-07-09 02:05:54 +0930
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jobs.css?body=1" for 127.0.0.1 at 2013-07-09 02:05:54 +0930
+Served asset /jobs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2013-07-09 02:05:54 +0930
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-09 02:05:54 +0930
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-07-09 02:05:54 +0930
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-09 02:05:54 +0930
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jobs.js?body=1" for 127.0.0.1 at 2013-07-09 02:05:54 +0930
+Served asset /jobs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.js?body=1" for 127.0.0.1 at 2013-07-09 02:05:54 +0930
+Served asset /main.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-07-09 02:05:54 +0930
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started POST "/jobs" for 127.0.0.1 at 2013-07-09 02:06:01 +0930
+Processing by JobsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PlpNgoep+t/Y58AjPVvxpc2LlGTH+eCF7cWCqUGuemo=", "job"=>{"source"=>"accounting", "url"=>"http://www.careerbuilder.com/RTQ/rss20.aspx?rssid=RSS_PD&num=25&geoip=false&ddcompany=false&ddtitle=false&cat=JN001"}, "commit"=>"Create Job"}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (2.0ms)[0m  [1mINSERT INTO "jobs" ("created_at", "source", "updated_at", "url") VALUES (?, ?, ?, ?)[0m  [["created_at", Mon, 08 Jul 2013 16:36:01 UTC +00:00], ["source", "accounting"], ["updated_at", Mon, 08 Jul 2013 16:36:01 UTC +00:00], ["url", "http://www.careerbuilder.com/RTQ/rss20.aspx?rssid=RSS_PD&num=25&geoip=false&ddcompany=false&ddtitle=false&cat=JN001"]]
+  [1m[35m (105.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/jobs/3
+Completed 302 Found in 114ms (ActiveRecord: 107.0ms)
+
+
+Started GET "/jobs/3" for 127.0.0.1 at 2013-07-09 02:06:01 +0930
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mJob Load (0.0ms)[0m  [1mSELECT "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT 1[0m  [["id", "3"]]
+  Rendered jobs/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 15ms (Views: 12.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-07-09 02:06:01 +0930
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jobs.css?body=1" for 127.0.0.1 at 2013-07-09 02:06:01 +0930
+Served asset /jobs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2013-07-09 02:06:01 +0930
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-07-09 02:06:01 +0930
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-09 02:06:01 +0930
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-09 02:06:01 +0930
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jobs.js?body=1" for 127.0.0.1 at 2013-07-09 02:06:01 +0930
+Served asset /jobs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.js?body=1" for 127.0.0.1 at 2013-07-09 02:06:01 +0930
+Served asset /main.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-07-09 02:06:01 +0930
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/jobs" for 127.0.0.1 at 2013-07-09 02:06:05 +0930
+Processing by JobsController#index as HTML
+  [1m[35mJob Load (0.0ms)[0m  SELECT "jobs".* FROM "jobs" 
+  Rendered jobs/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 32ms (Views: 30.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-07-09 02:06:05 +0930
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jobs.css?body=1" for 127.0.0.1 at 2013-07-09 02:06:05 +0930
+Served asset /jobs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2013-07-09 02:06:05 +0930
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-07-09 02:06:05 +0930
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-09 02:06:05 +0930
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-09 02:06:05 +0930
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jobs.js?body=1" for 127.0.0.1 at 2013-07-09 02:06:05 +0930
+Served asset /jobs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.js?body=1" for 127.0.0.1 at 2013-07-09 02:06:05 +0930
+Served asset /main.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-07-09 02:06:05 +0930
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/jobs/3" for 127.0.0.1 at 2013-07-09 02:06:07 +0930
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mJob Load (0.0ms)[0m  [1mSELECT "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT 1[0m  [["id", "3"]]
+  Rendered jobs/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 26ms (Views: 23.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-07-09 02:06:07 +0930
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jobs.css?body=1" for 127.0.0.1 at 2013-07-09 02:06:07 +0930
+Served asset /jobs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2013-07-09 02:06:07 +0930
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-09 02:06:07 +0930
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-09 02:06:07 +0930
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-07-09 02:06:07 +0930
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jobs.js?body=1" for 127.0.0.1 at 2013-07-09 02:06:07 +0930
+Served asset /jobs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.js?body=1" for 127.0.0.1 at 2013-07-09 02:06:07 +0930
+Served asset /main.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-07-09 02:06:07 +0930
+Served asset /application.js - 304 Not Modified (0ms)
